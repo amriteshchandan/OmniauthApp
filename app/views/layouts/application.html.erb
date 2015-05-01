@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FacebookOnRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<% flash.each do |name, msg| %>
+	<div class="alert text-center alert-<%= name == notice ? "success" : "error" %>">
+		<a class="close" data-dismiss="alert">x</a>
+		<%= msg %>
+	</div>
+	<% end %>
+	
+	<%= render 'layouts/header' %>
+	<%= yield %>
+
+</body>
+</html>
